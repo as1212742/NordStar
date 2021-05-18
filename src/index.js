@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NorthStarThemeProvider from 'aws-northstar/components/NorthStarThemeProvider';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <NorthStarThemeProvider>
+        <App />
+    </NorthStarThemeProvider>,
   document.getElementById('root')
 );
 
