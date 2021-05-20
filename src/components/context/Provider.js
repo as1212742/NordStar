@@ -18,13 +18,19 @@ export const DataProvider  = (props) => {
         })
     }
 
-    const SetInstanceType = type =>{
+    const SetInstanceType = types =>{
         Pagedispatch({
             type:PageType.SET_INSTANCE_TYPE,
-            payload: type
+            payload: types
         })
     }
 
+    const SetEksPath = path =>{
+        Pagedispatch({
+            type:PageType.SET_EKS_BREADCRUMP_TYPE,
+            payload: path
+        })
+    }
     return (
        <DataContext.Provider value={{
           PageState,

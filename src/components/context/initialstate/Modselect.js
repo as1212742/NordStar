@@ -4,5 +4,9 @@ export default {
     },
     Eks:{
         type:"General Purpose"
+    },
+    EksBreadCrumpPath:{
+        text: 'Home',
+        href: '#Home',
     }
 }

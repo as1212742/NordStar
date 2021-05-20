@@ -14,8 +14,17 @@ const PageReducer = (state,action) => {
        return{
            ...state,
            Eks:{
-            type: action.payload
+            text: action.payload.text,
+            href: action.payload.href,
         }
+       }
+
+       case PageType.SET_EKS_BREADCRUMP_TYPE:
+       return{
+           ...state,
+           EksBreadCrumpPath:{
+            type: action.payload
+         }
        }
 
        default:
