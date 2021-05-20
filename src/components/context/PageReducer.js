@@ -9,6 +9,15 @@ const PageReducer = (state,action) => {
                num: action.payload
            }
        }
+
+       case PageType.SET_INSTANCE_TYPE:
+       return{
+           ...state,
+           Eks:{
+            type: action.payload
+        }
+       }
+
        default:
            return state;
    }

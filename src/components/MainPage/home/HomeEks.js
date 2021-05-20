@@ -65,47 +65,47 @@ const breadcrumbGroup = (
         items={[
             {
                 text: 'Home',
-                href: '#home',
+                href: '/HomeEks',
             },
             {
                 text: 'Path1',
-                href: '#path1',
+                href: '/',
             },
             {
                 text: 'Path2',
-                href: '#path2',
+                href: '/',
             },
             {
                 text: 'Path3',
-                href: '#path3',
+                href: '/',
             }
         ]}
     />
 );
 const defaultNotifications = [
-    {
-        id: '1',
-        header: 'Successfully updated 4 orders',
-        type: 'success',
-        content: 'This is a success flash message.',
-        dismissible: true,
-    },
-    {
-        id: '2',
-        header: 'Failed to update 1 order',
-        type: 'error',
-        content: 'This is a dismissible error message with a button.',
-        buttonText: 'Retry',
-        onButtonClick: () => console.log('Button clicked'),
-        dismissible: true,
-    },
-    {
-        id: '3',
-        header: 'Warning',
-        type: 'warning',
-        content: 'This is warning content',
-        dismissible: true,
-    }
+    // {
+    //     id: '1',
+    //     header: 'Successfully updated 4 orders',
+    //     type: 'success',
+    //     content: 'This is a success flash message.',
+    //     dismissible: true,
+    // },
+    // {
+    //     id: '2',
+    //     header: 'Failed to update 1 order',
+    //     type: 'error',
+    //     content: 'This is a dismissible error message with a button.',
+    //     buttonText: 'Retry',
+    //     onButtonClick: () => console.log('Button clicked'),
+    //     dismissible: true,
+    // },
+    // {
+    //     id: '3',
+    //     header: 'Warning',
+    //     type: 'warning',
+    //     content: 'This is warning content',
+    //     dismissible: true,
+    // }
 ]; 
 
 const [notifications, setNotifications] = useState(defaultNotifications);
@@ -122,9 +122,7 @@ const handleDismiss = (id) => {
           breadcrumbs={breadcrumbGroup}
           notifications={notifications.map(n => ({ ...n, onDismiss: () => handleDismiss(n.id) }))}
       >    
-      {
-          PageState.page.num?<Eks/>:null
-      }
+      <Eks/>
     </AppLayout>
   )
 }

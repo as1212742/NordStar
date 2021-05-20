@@ -17,6 +17,14 @@ export const DataProvider  = (props) => {
             payload: no
         })
     }
+
+    const SetInstanceType = type =>{
+        Pagedispatch({
+            type:PageType.SET_INSTANCE_TYPE,
+            payload: type
+        })
+    }
+
     return (
        <DataContext.Provider value={{
           PageState,

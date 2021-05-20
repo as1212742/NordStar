@@ -1,6 +1,6 @@
 import Stack from 'aws-northstar/layouts/Stack';
 import Box from 'aws-northstar/layouts/Box';
-import Forms from './forms/forms'
+import Forms from './forms/Secondform'
 import Home from '../home/Home'
 
 const MainContent = () => {
