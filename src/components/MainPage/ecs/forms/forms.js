@@ -6,7 +6,7 @@ import FormSection from 'aws-northstar/components/FormSection';
 import Input from 'aws-northstar/components/Input';
 import Select from 'aws-northstar/components/Select';
 import { useCallback, useEffect, useState } from 'react';
-import region from "../../../data/RegionData"
+import region from "../../../../data/RegionData"
 
 const Forms = () => {
 

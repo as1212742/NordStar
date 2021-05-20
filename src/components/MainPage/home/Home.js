@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import AppLayout from 'aws-northstar/layouts/AppLayout';
 import Header from 'aws-northstar/components/Header';
@@ -9,12 +9,13 @@ import HelpPanel from 'aws-northstar/components/HelpPanel';
 import Link from 'aws-northstar/components/Link';
 import Text from 'aws-northstar/components/Text';
 import Heading from 'aws-northstar/components/Heading';
-import MainContent from "./components/MainPage/Calc"
-import Fargate from "./components/MainPage/Fargate"
 import { BrowserRouter as  Switch, Route } from 'react-router-dom';
-
+import Ecs from '../ecs/ecsfrontpage'
+import {DataContext} from '../../context/Provider'
 
 const App = () => {
+
+const {PageState,CreatePageState} = useContext(DataContext)
 
 const header = <Header title="Pricing Calculator" />;
 const navigationItems = [
@@ -113,7 +114,6 @@ const handleDismiss = (id) => {
     setNotifications(notifications.filter(n => n.id !== id));
 };
 
-
   return (
       <AppLayout
           header={header}
@@ -121,8 +121,10 @@ const handleDismiss = (id) => {
           helpPanel={helpPanel}  
           breadcrumbs={breadcrumbGroup}
           notifications={notifications.map(n => ({ ...n, onDismiss: () => handleDismiss(n.id) }))}
-      >
-          <MainContent/>
+      >    
+      {
+          PageState.page.num?<Ecs/>:null
+      }
     </AppLayout>
   )
 }
